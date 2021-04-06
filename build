@@ -18,11 +18,9 @@ cd /tmp/rom
 cd /tmp/rom
 cd /tmp/rom
 
-rm -rf external/json-c && git clone https://github.com/LineageOS/android_external_json-c.git external/json-c
-cd /tmp/rom
 
 . build/envsetup.sh
-lunch kangos_RMX2151-userdebug ##edit this
+lunch kangos_RMX2020-userdebug ##edit this
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
