@@ -47,3 +47,4 @@ make_rom(){
 
 make_metalava
 make_rom 
+kill "$!" && bash upload_ccache
