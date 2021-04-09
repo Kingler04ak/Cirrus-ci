@@ -20,7 +20,7 @@ cd /tmp/rom
 
 
 . build/envsetup.sh
-lunch kangos_RMX2020-userdebug ##edit this
+lunch aosp_RMX2020-userdebug ##edit this
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -39,7 +39,7 @@ make_metalava(){
 }
 
 make_rom(){
-	make bacon -j18
+	make bacon -j14
 	zip=$(up out/target/product/RMX2151/*zip) ##edit this change from miatoll---> /<your device codename>
 	echo " "
 	echo "$zip"
