@@ -2,25 +2,13 @@
 cd /tmp/rom
 rm -rf .repo
 
-# SELinux Patch ##Must
-cd external/selinux && curl -L http://ix.io/2FhM > sasta.patch && git am sasta.patch && cd ../..
+cd external/selinux 
+curl -L http://ix.io/2FhM > sasta.patch 
+git am sasta.patch 
 cd /tmp/rom
-
-#ims patches
-
-cd frameworks/opt/net/wifi && wget https://raw.githubusercontent.com/SamarV-121/android_vendor_extra/lineage-18.1/patches/frameworks/opt/net/wifi/0001-wifi-Add-StaState-API.patch && patch -p1 < *.patch && cd -
-cd /tmp/rom
-cd frameworks/opt/net/ims && wget https://raw.githubusercontent.com/SamarV-121/android_vendor_extra/lineage-18.1/patches/frameworks/opt/net/ims/0001-Partially-Revert-Remove-references-to-deprecated-dev.patch && patch -p1 < *.patch && cd -
-cd /tmp/rom
-#audio
-cd frameworks/av && wget https://github.com/phhusson/platform_frameworks_av/commit/624cfc90b8bedb024f289772960f3cd7072fa940.patch && patch -p1 < *.patch && cd -
-cd /tmp/rom
-cd /tmp/rom
-cd /tmp/rom
-
 
 . build/envsetup.sh
-lunch aosp_RMX2020-userdebug ##edit this
+lunch aosp_RMX2151-userdebug ##edit this
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
