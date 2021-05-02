@@ -1,17 +1,16 @@
 #!/bin/bash
 sudo apt install wget
+MANIFEST=https://github.com/PixelExperience/manifest
+BRANCH=TEN
 
 mkdir -p /tmp/rom
 cd /tmp/rom
 
-repo init -u https://github.com/PixelExperience/manifest -b eleven
-
-# Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
-
+repo init --no-repo-verify --depth=1 -u "$MANIFEST -b "$BRANCH" -g default,-device,-mips,-darwin,notdefault
+git config --global user.name Akash23q2
+git config --global user.email ritachaturvedi9@gmail.com
 ##delete these lines, and replace with your own lines of device sauce
-git clone https://github.com/noobyysauraj/proprietary_vendor_realme_RMX2151.git vendor/realme/RMX2151
-git clone https://github.com/noobyysauraj/device_realme_RMX2151.git device/realme/RMX2151
+git clone https://github.com/Akash23q2/vendor_lenovo_TBX304
+git clone https://github.com/Akash23q2/device_lenovo_TBX304
 
 cd /tmp/rom
