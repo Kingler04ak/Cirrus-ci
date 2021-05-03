@@ -1,3 +1,4 @@
+#fuks
 #!/bin/bash
 
 mkdir -p /tmp/rom # Where to sync source
