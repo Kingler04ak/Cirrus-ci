@@ -9,7 +9,7 @@ repo init -u https://github.com/Wave-Project/manifest -b r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 ##delete these lines, and replace with your own lines of device sauce
-git clone https://github.com/PixelExperience-Devices/device_asus_X00P
+git clone https://github.com/Akash23q2/device_asus_X00P
 git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_asus_X00P
 
 ls
