@@ -5,7 +5,8 @@ rm -rf .repo
 cd /tmp/rom
 
 source build/envsetup.sh
-brunch aosp_X00P-userdebugexport CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
+brunch X00P
+CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 ccache -M 20G
