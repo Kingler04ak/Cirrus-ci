@@ -6,10 +6,6 @@ BRANCH=TEN
 mkdir -p /tmp/rom
 cd /tmp/rom
 
-repo init --no-repo-verify --depth=1 -u "$MANIFEST -b "$BRANCH" -g default,-device,-mips,-darwin,notdefault
-git config --global user.name Akash23q2
-git config --global user.email ritachaturvedi9@gmail.com
-##delete these lines, and replace with your own lines of device sauce
 git clone https://github.com/Akash23q2/vendor_lenovo_TBX304
 git clone https://github.com/Akash23q2/device_lenovo_TBX304
 
