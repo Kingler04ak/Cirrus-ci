@@ -4,7 +4,7 @@ sudo apt install wget
 mkdir -p /tmp/rom
 cd /tmp/rom
 
-repo init -u https://github.com/PixelPlusUI/manifest.git -b eleven
+repo init -u https://github.com/PixelPlusUI/manifest -b eleven
 ## Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 

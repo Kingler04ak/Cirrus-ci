@@ -4,7 +4,7 @@ rm -rf .repo
  
 cd /tmp/rom
 
-. build/envsetup.sh
+source build/envsetup.sh
 lunch aosp_X00P-userdebug
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
@@ -24,12 +24,12 @@ make_metalava(){
 }
 
 make_rom(){
-	make bacon -j14
+	mka bacon -j14
 	zip=$(up out/target/product/asus_X00P/*zip) ##edit this change from miatoll---> /<your device codename>
 	echo " "
 	echo "$zip"
 }
 
-make_metalava
+make_metaX00P
 make_rom 
 sleep 4500 && kill "$!"
