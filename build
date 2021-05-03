@@ -4,8 +4,8 @@ rm -rf .repo
  
 cd /tmp/rom
 
-source build/envsetup.sh
-lunch aosp_asus_X00P-userdebug
+. build/envsetup.sh
+lunch aosp_X00P-userdebug
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
