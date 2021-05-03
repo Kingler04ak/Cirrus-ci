@@ -10,8 +10,7 @@ repo init -u https://github.com/PixelExperience/manifest -b ten
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 ##delete these lines, and replace with your own lines of device sauce
-git clone https://github.com/Akash23q2/vendor_lenovo_TBX304
-git clone https://github.com/Akash23q2/device_lenovo_TBX304
+git clone https://github.com/Akash23q2/device_lenovo_TBX304 -b aosp_TBX304
 git clone https://github.com/lenovo-devs/proprietary_vendor_lenovo -b lineage-17.1-msm8937 vendor/lenovo
 git clone https://github.com/lenovo-devs/android_device_lenovo_tb-common -b lineage-17.1-msm8937 device/lenovo/tb-common
 cd /tmp/rom
