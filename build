@@ -1,12 +1,9 @@
 #!/bin/bash
 cd /tmp/rom
-rm -rf .repo
- 
-cd /tmp/rom
 
-source build/envsetup.sh
-lunch_aosp-X00P-userdebug
-CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
+. build/envsetup.sh
+lunch_aosp_X00P-userdebug
+export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 ccache -M 20G
@@ -30,6 +27,6 @@ make_rom(){
 	echo "$zip"
 }
 
-make_metaX00P
+make_metalava
 make_rom 
 sleep 4500 && kill "$!"
