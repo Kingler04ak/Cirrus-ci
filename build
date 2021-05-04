@@ -2,7 +2,7 @@
 cd /tmp/rom
 
 . build/envsetup.sh
-lunch arrow_X00P-userdebug
+lunch aosp_X00P-userdebug
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
