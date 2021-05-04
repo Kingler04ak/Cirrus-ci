@@ -1,8 +1,8 @@
 #!/bin/bash
 cd /tmp/rom
 
-source build/envsetup.sh
-brunch merlin
+. build/envsetup.sh
+lunch lighthouse_merlin-userdebug
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -21,8 +21,8 @@ make_metalava(){
 }
 
 make_rom(){
-	mka bacon -j14
-	zip=$(up out/target/product/merlin/*zip) ##edit this change from miatoll---> /<your device codename>
+	mka lighthouse
+        zip=$(up out/target/product/merlin/*zip) ##edit this change from miatoll---> /<your device codename>
 	echo " "
 	echo "$zip"
 }
