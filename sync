@@ -4,13 +4,13 @@ sudo apt install wget
 mkdir -p /tmp/rom
 cd /tmp/rom
 
-repo init -q --no-repo-verify --depth=1 -u https://github.com/PixelExperience/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init -q --no-repo-verify --depth=1 -u https://github.com/Wave-Project/manifest -b r -g default,-device,-mips,-darwin,-notdefault
 
 ## Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 ##delete these lines, and replace with your own lines of device sauce
-git clone https://github.com/Akash23q2/device_asus_X00P device/asus/X00P
+git clone https://github.com/Akash23q2/device_asus_X00P -b Wave-Os device/asus/X00P
 git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_asus_X00P vendor/asus/XOOP
 
 cd /tmp/rom
