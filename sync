@@ -11,3 +11,5 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 git clone https://github.com/Akash23q2/device_asus_X00P -b Wave-Os device/asus/X00P
 
 git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_asus_X00P vendor/asus/X00P
+
+ls
