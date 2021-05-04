@@ -12,4 +12,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 git clone https://github.com/Akash23q2/device_asus_X00P
 git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_asus_X00P
 
+cd /tmp/rom
+
 ls
