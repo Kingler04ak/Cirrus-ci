@@ -13,4 +13,6 @@ git clone https://github.com/Akash23q2/device_asus_X00P -b eleven device/asus/X0
 
 git clone https://gitlab.pixelexperience.org/android/vendor-blobs/vendor_asus_X00P vendor/asus/X00P
 
+git clone https://github.com/stormbreaker-project/kernel_asus_X00PD kernel/asus/X00P
+
 ls
