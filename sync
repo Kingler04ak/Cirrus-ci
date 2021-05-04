@@ -1,5 +1,5 @@
 #!/bin/bash
-#k
+
 mkdir -p /tmp/rom # Where to sync source
 cd /tmp/rom
 
