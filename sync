@@ -13,6 +13,7 @@ git clone https://github.com/Akash23q2/android_device_xiaomi_merlin device/xiaom
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlin -b eleven vendor/xiaomi/merlin
 
 ls
+sudo apt install wget
 cd frameworks/base && rm -rf *patch && wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch && git apply 37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
 cd -
 cd frameworks/opt/net/ims && rm -rf *patch && wget https://github.com/PixelExperience/frameworks_opt_net_ims/commit/661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch && git apply 661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch
