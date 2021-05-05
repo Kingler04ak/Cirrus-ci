@@ -2,13 +2,14 @@
 cd /tmp/rom
 
 . build/envsetup.sh
-lunch aosp_X00P-userdebug
+lunch lighthouse_merlin-userdebug
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 ccache -M 20G
 ccache -o compression=true
 ccache -z
+
 
 up(){
 	curl --upload-file $1 https://transfer.sh/
@@ -21,8 +22,8 @@ make_metalava(){
 }
 
 make_rom(){
-	mka bacon -j14
-	zip=$(up out/target/product/asus_X00P/*zip) ##edit this change from miatoll---> /<your device codename>
+	mka bacon -j16
+        zip=$(up out/target/product/merlin/*zip) ##edit this change from miatoll---> /<your device codename>
 	echo " "
 	echo "$zip"
 }
