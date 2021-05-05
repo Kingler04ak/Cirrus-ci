@@ -1,7 +1,7 @@
 keks# AOSP Builder
 Build aosp project in docker with Ubuntu 20.04 via ci environments (by [Apon77](https://github.com/Apon77)), **edited**
 
-Thanks [Cirrus CI](https://cirrus-ci.com/) for their awesome service!
+thanks [Cirrus CI](https://cirrus-ci.com/) for their awesome service!
 
 I tried to explian every steps by comments! Try to read those throughly!
 
