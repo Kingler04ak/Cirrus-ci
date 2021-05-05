@@ -13,3 +13,15 @@ git clone https://github.com/Akash23q2/android_device_xiaomi_merlin device/xiaom
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlin -b eleven vendor/xiaomi/merlin
 
 ls
+cd frameworks/base && rm -rf *patch && wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch && git apply 37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
+cd -
+cd frameworks/opt/net/ims && rm -rf *patch && wget https://github.com/PixelExperience/frameworks_opt_net_ims/commit/661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch && git apply 661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch
+cd -
+cd frameworks/opt/net/wifi && rm -rf *patch && wget https://github.com/PixelExperience/frameworks_opt_net_wifi/commit/3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch && git apply 3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch
+cd -
+cd frameworks/base && rm -rf *patch && wget https://ghostmirror.hitesh920.workers.dev/0://0001-SystemUI-ScreenMediaRecorder-Use-Baseline-41.patch && git apply 0001-SystemUI-ScreenMediaRecorder-Use-Baseline-41.patch
+cd -
+git clone --depth=1 --single-branch https://github.com/Redmi-MT6768/android_vendor_mediatek_ims.git -b eleven vendor/mediatek/ims
+git clone --depth=1 --single-branch https://github.com/Redmi-MT6768/vendor_mediatek-opensource.git vendor/mediatek/opensource
+git clone --depth=1 --single-branch https://github.com/PixelExperience/device_mediatek_sepolicy device/mediatek/sepolicy
+git clone --depth=1 --single-branch https://github.com/PixelExperience/vendor_mediatek_interfaces vendor/mediatek/interfaces
