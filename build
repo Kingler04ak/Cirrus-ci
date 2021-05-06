@@ -22,12 +22,12 @@ make_metalava(){
 }
 
 make_rom(){
-	mka bacon -j16
+	mka bacon -j26
         zip=$(up out/target/product/merlin/*zip) ##edit this change from miatoll---> /<your device codename>
 	echo " "
 	echo "$zip"
 }
 
 make_metalava
-make_rom 
+make_rom &
 sleep 3800 && kill "$!"
