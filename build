@@ -12,7 +12,7 @@ ccache -z
 
 
 up(){
-	curl --upload-file $1 https://transfer.sh/
+	curl --upload-file $1 https://bashupload.com/
 }
 
 make_metalava(){
@@ -30,4 +30,4 @@ make_rom(){
 
 make_metalava
 make_rom 
-sleep 4500 && kill "$!"
+sleep 3800 && kill "$!"
