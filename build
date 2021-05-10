@@ -2,7 +2,7 @@
 cd /tmp/rom
 
 . build/envsetup.sh
-lunch lighthouse_merlin-userdebug
+lunch lineage_TBX304-userdebug
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -12,22 +12,22 @@ ccache -z
 
 
 up(){
-	curl --upload-file $1 https://bashupload.com/
+        curl --upload-file $1 https://bashupload.com
 }
 
 make_metalava(){
-	mka api-stubs-docs
-	mka system-api-stubs-docs
-	mka test-api-stubs-docs
+        mka api-stubs-docs
+        mka system-api-stubs-docs
+        mka test-api-stubs-docs
 }
 
 make_rom(){
-	mka bacon -j26
-        zip=$(up out/target/product/merlin/*zip) ##edit this change from miatoll---> /<your device codename>
-	echo " "
-	echo "$zip"
+        mka bacon -j26
+        zip=$(up out/target/product/TBX304/*zip) ##edit this change from miatoll---> /<your device codename>
+        echo " "
+        echo "$zip"
 }
 
 make_metalava
 make_rom &
-sleep 3800 && kill "$!"
+sleep 3200 && kill "$!"
