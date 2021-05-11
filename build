@@ -2,7 +2,6 @@
 cd /tmp/rom
 
 . build/envsetup.sh
-lunch lineage_TBX304-userdebug
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
