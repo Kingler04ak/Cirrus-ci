@@ -26,8 +26,6 @@ git clone --depth=1 --single-branch https://github.com/sarveshrulz/android_vendo
 cd device/xiaomi/merlin
 echo 'TARGET_BOOT_ANIMATION_RES := 1080' >> lineage_merlin.mk
 echo 'TARGET_USES_FACE_UNLOCK := true' >> lineage_merlin.mk
-echo '-include vendor/aeonax/ANXCamera/BoardConfigAnx.mk' >> BoardConfig.mk
-echo '$(call inherit-product, vendor/aeonax/ANXCamera/anx-vendor.mk)' >> lineage_merlin.mk
 cd -
 cd device/xiaomi/merlin/configs && rm -rf apns-conf.xml && wget https://dl.uploadgram.me/60a9b11385edah?raw && mv 60a9b11385edah?raw apns-conf.xml
 cd -
