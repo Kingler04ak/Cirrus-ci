@@ -9,6 +9,9 @@ task:
       cpu: 8
       memory: 30G
     sync_script:
+     download_ccache_script:
+      - bash download_ccache
+    sync_script:
       - bash sync
     build_script:
       - bash build
@@ -16,4 +19,4 @@ task:
       - bash upload_ccache
 
 
-#start Building
+#start Building 
