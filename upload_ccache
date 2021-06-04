@@ -13,7 +13,7 @@ com ()
 time com ccache-example 1 # Compression level 1, its enough
 
 up(){
-	curl bashupload.com -T $1
+	curl https://transfer.sh -T $1
 }
 
 up ccache-example.tar.gz
