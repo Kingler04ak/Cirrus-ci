@@ -7,7 +7,7 @@ task:
     container:
       image: mrkhan007/aosp:latest
       cpu: 8
-      memory: 20
+      memory: 16
     sync_script:
     download_ccache_script:
       - bash sync
