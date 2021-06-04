@@ -1,14 +1,34 @@
 #!/bin/bash
+sudo apt install wget
 
 mkdir -p /tmp/rom # Where to sync source
 cd /tmp/rom
-# Repo init command, that -device,-mips,-darwin,-notdefault part will save you more time and storage to sync, add more according to your rom and choice. Optim>
-repo init --depth 1 -u https://github.com/LightningFastRom/android -b lineage-17.1 -g default,-device,-mips,-darwin,-notdefault
-### Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
+repo init --depth 1 -u git://github.com/Lineage-FE/manifest.git -b lineage-18.1
+git clone https://github.com/Akash23q2/android_device_xiaomi_merlin -b eleven device/xiaomi/merlin
+git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlin -b eleven vendor/xiaomi/merlin
 
-repo sync
-git clone https://github.com/Akash23q2/device_lenovo_TBX304 -b lineage-17.1  device/lenovo/TBX304
-git clone https://github.com/lenovo-devs/proprietary_vendor_lenovo -b lineage-17.1-msm8937 vendor/lenovo
-git clone https://github.com/lenovo-devs/android_device_lenovo_tb-common -b lineage-17.1-msm8937 device/lenovo/tb-common
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+cd frameworks/base && rm -rf *patch && wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch && git apply 37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
+cd -
+cd frameworks/opt/net/ims && rm -rf *patch && wget https://github.com/PixelExperience/frameworks_opt_net_ims/commit/661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch && git apply 661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch
+cd -
+cd frameworks/opt/net/wifi && rm -rf *patch && wget https://github.com/PixelExperience/frameworks_opt_net_wifi/commit/3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch && git apply 3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch
+cd -
+cd frameworks/base && rm -rf *patch && wget https://ghostmirror.hitesh920.workers.dev/0://0001-SystemUI-ScreenMediaRecorder-Use-Baseline-41.patch && git apply 0001-SystemUI-ScreenMediaRecorder-Use-Baseline-41.patch
+cd -
+git clone --depth=1 --single-branch https://github.com/Redmi-MT6768/android_vendor_mediatek_ims.git -b eleven vendor/mediatek/ims
+git clone --depth=1 --single-branch https://github.com/Redmi-MT6768/vendor_mediatek-opensource.git vendor/mediatek/opensource
+git clone --depth=1 --single-branch https://github.com/PixelExperience/device_mediatek_sepolicy device/mediatek/sepolicy
+git clone --depth=1 --single-branch https://github.com/PixelExperience/vendor_mediatek_interfaces vendor/mediatek/interfaces
+git clone --depth=1 --single-branch https://github.com/sarveshrulz/android_vendor_aeonax_ANXCamera.git -b v185 vendor/aeonax/ANXCamera
+##TEMPORARY
+cd device/xiaomi/merlin
+echo 'TARGET_BOOT_ANIMATION_RES := 1080' >> lineage_merlin.mk
+echo 'TARGET_USES_FACE_UNLOCK := true' >> lineage_merlin.mk
+echo '-include vendor/aeonax/ANXCamera/BoardConfigAnx.mk' >> BoardConfig.mk
+echo '$(call inherit-product, vendor/aeonax/ANXCamera/anx-vendor.mk)' >> lineage_merlin.mk
+cd -
+cd device/xiaomi/merlin/configs && rm -rf apns-conf.xml && wget https://dl.uploadgram.me/60a9b11385edah?raw && mv 60a9b11385edah?raw apns-conf.xml
+cd -
 ls
