@@ -1,7 +1,6 @@
 #!/bin/bash
 
-url=https://transfer.sh/11ZdyCv/ccache-example.tar.gz
-
+url=https://ghost-mirror.hitesh920.workers.dev/0://ccache-example.tar.gz
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"

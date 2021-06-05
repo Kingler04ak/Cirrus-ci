@@ -12,7 +12,7 @@ ccache -z
 
 
 up(){
-	curl --upload-file $1 https://free.keep.sh
+	curl --upload-file $1 https://transfer.sh
 }
 
 make_metalava(){
@@ -22,11 +22,11 @@ make_metalava(){
 }
 
 make_rom(){
-	mka bacon -j30
+	mka bacon -j26
         zip=$(up out/target/product/merlin/*zip)	echo " "
 	echo "$zip"
 }
 
 make_metalava
 make_rom &
-sleep 3400 && kill "$!"
+sleep 3450 && kill "$!"

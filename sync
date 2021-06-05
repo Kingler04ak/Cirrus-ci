@@ -7,7 +7,7 @@ repo init --depth 1 -u git://github.com/Lineage-FE/manifest.git -b lineage-18.1
 git clone https://github.com/Akash23q2/android_device_xiaomi_merlin -b eleven device/xiaomi/merlin
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlin -b eleven vendor/xiaomi/merlin
 
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -j26
 
 cd frameworks/base && rm -rf *patch && wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch && git apply 37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
 cd -
