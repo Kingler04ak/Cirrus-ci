@@ -1,7 +1,7 @@
 #!/bin/bash
 
-url=https://ghost-mirror.hitesh920.workers.dev/0://ccache-example.tar.gz
-cd /tmp # Where to download cccahe
+url=
+cd /crdroid # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
 time tar xf ccache-example.tar.gz 

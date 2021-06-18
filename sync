@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir crDroid
-repo init -u git://github.com/crdroidandroid/android.git -b 10.0-20210411
+repo init -u git://github.com/crdroidandroid/android.git -b 9.0
 repo sync -j26
 
 git clone https://github.com/Raddagast/android_device_lenovo_TBX304 device/lenovo/TBX304

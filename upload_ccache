@@ -13,10 +13,10 @@ com ()
 time com ccache-example 1 # Compression level 1, its enough
 
 up(){
-	curl https://transfer.sh.sh -T $1
+	curl https://transfer.sh -T $1
 }
 
-up ccache-example.tar.gz
+up rum.tar.gz
 
 # mkdir -p ~/.config/rclone
 # echo "$rclone_config" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
