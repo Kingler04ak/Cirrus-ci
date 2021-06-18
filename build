@@ -1,5 +1,5 @@
 #!/bin/bash
-cd crDroid
+cd /crDroid
 . build/envsetup.sh
 brunch TBX304
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
