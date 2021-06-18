@@ -1,8 +1,7 @@
 #!/bin/bash
-cd /tmp/rom
-
+cd crDroid
 . build/envsetup.sh
-lunch lineage_merlin-userdebug
+brunch TBX304
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -23,10 +22,10 @@ make_metalava(){
 
 make_rom(){
 	mka bacon -j26
-        zip=$(up out/target/product/merlin/*zip)	echo " "
+        zip=$(up out/target/product/TBX304/*zip)	echo " "
 	echo "$zip"
 }
 
 make_metalava
 make_rom &
-sleep 3450 && kill "$!"
+sleep 3200 && kill "$!"
