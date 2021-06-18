@@ -1,5 +1,5 @@
-#!/bin/bash
-mkdir crDroid
+mkdir -p /tmp/rom # Where to sync source
+cd /tmp/rom
 repo init -u git://github.com/crdroidandroid/android.git -b 9.0
 repo sync -j26
 
